@@ -12,7 +12,7 @@ These files contain a command call to wget for each image.
 To download images run the following command:                                                                                                                                           
 
 ```console
-foo@bar:~$ cat visualstories_edfest_2017_nospam_twitter_image-urls.out  | xargs -I {} sh -c {}                                                                                          
+foo@bar:~$ cat visualstories_edfest_2017_twitter_nospam_image-urls.out  | xargs -I {} sh -c {}                                                                                          
 ```
 
 The filename of each image will the Tweet ID of the corresponding image. You can download images in parallel by passing the option `-P <number processes>` to xargs.
@@ -32,7 +32,7 @@ These files contain a command call to youtube-dl for each video.
 To download videos run the following command:
 
 ```console
-foo@bar:~$ cat visualstories_edfest_2017_nospam_twitter_video-urls.out  | xargs -I {} sh -c {}
+foo@bar:~$ cat visualstories_edfest_2017_twitter_nospam_video-urls.out  | xargs -I {} sh -c {}
 ```
 
 The filename of each video will be the Tweet ID of the corresponding video.
