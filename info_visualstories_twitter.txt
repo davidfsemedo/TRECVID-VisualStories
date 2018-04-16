@@ -1,0 +1,97 @@
+###############################################################################################
+### TRECVID 2018 - Social-media Video Storytelling Linking                                    #
+### Task webpage: http://novasearch.org/trecvid-2018-social-media-video-storytelling-linking/ #
+### Github page: https://github.com/davidfsemedo/TRECVID-VisualStories			      #
+###############################################################################################
+
+
+######################### TWITTER VISUAL STORIES DATASET ######################################
+
+# Development data comprises events:
+- Edinburgh Festival 2016 - DEVELOPMENT - Files: 
+	- SPAM not Filtered: visualstories_edfest_2016_twitter_images.csv
+	- SPAM Filtered*: visualstories_edfest_2016_twitter_nospam_images.csv
+- Tour de France 2016 - DEVELOPMENT - Files: 
+	- SPAM not Filtered: visualstories_tourfrance_2016_twitter_images.csv
+	- SPAM Filtered*: visualstories_tourfrance_2016_twitter_nospam_images.csv
+
+NOTE: We release the 2016 event editions datasets with images only. As detailed in the task website,
+the provided groundtruth was generated for images only. Both SPAM filtered and non-filtered datasets are released.
+
+
+# Evaluation data comprises events:
+- Edinburgh Festival 2017 - EVALUATION - Files: 
+	- SPAM not Filtered: 
+		- visualstories_edfest_2017_twitter_images+videos.csv
+		- visualstories_edfest_2017_twitter_images.csv
+		- visualstories_edfest_2017_twitter_videos.csv
+	- SPAM Filtered*:
+		- visualstories_edfest_2017_twitter_nospam_images+videos.csv
+		- visualstories_edfest_2017_twitter_nospam_images.csv
+		- visualstories_edfest_2017_twitter_nospam_videos.csv
+- Tour de France 2017 - EVALUATION - Files: 
+	- SPAM not Filtered: 
+		- visualstories_tourfrance_2017_twitter_images+videos.csv
+		- visualstories_tourfrance_2017_twitter_images.csv
+		- visualstories_tourfrance_2017_twitter_videos.csv
+	- SPAM Filtered*:
+		- visualstories_tourfrance_2017_twitter_nospam_images+videos.csv
+		- visualstories_tourfrance_2017_twitter_nospam_images.csv
+		- visualstories_tourfrance_2017_twitter_nospam_videos.csv
+
+
+*For a description of the SPAM filters applied, check the SocialStories paper:
+	- File: paper.pdf (To be added)
+ 
+
+# All the *.out files in folder "data_download/" are provided to aid data downloading. Check the task github page (at the top of this file) for more details.
+
+
+# CSV Files Formatting:
+- Each CSV file contains a list of tweets (one per line) with images or videos. 
+- The first line is an header with column names. 
+- Each tweet has either an image or a video, and not both.
+- The CSV file separator is a semicolon ';'
+- Encoding: UTF-8
+
+
+
+################################ Dataset Statistics ###########################################
+
+
+FULL:
+- Total images for edfest_2016: 29558
+- Total videos for edfest_2016: 5041
+- Total images for tourfrance_2016: 67032
+- Total videos for tourfrance_2016: 9478
+
+SPAM FILTERED:
+- Total images URL's for edfest_2016: 15439
+- Total videos URL's for edfest_2016: 3693
+- Total images URL's for tourfrance_2016: 34865
+- Total videos URL's for tourfrance_2016: 8685
+
+
+Description of individual columns:
+- "id": tweet id
+- "id_str": same as "id", but formatted as string
+- "created_at": Creation date of the tweet. Format: 2016-10-20 23:04:10
+- "epoch": Unix timestamp of the creation date of the tweet
+- "video-url": URL of the video, when the tweet contains a video
+- "image-url": URL of the image, when the tweet contains an image
+- "text": text of the tweet
+- "favorite_count": Number of times the tweet has been favorited
+- "retweet_count": Number of times the tweet has been retweeted
+- "user": Information of the user. Formatted as a json with the following entries:
+	- "id": Id of the user
+	- "id_str": Same as "id", but formatted as string
+	- "name": Name of the user
+	- "screen_name": Username of the user
+
+
+
+
+If you have any question regarding the dataset or if you find any issue, please contact:
+David Semedo - Email: df.semedo@campus.fct.unl.pt
+
+The NOVASEARCH Team.
