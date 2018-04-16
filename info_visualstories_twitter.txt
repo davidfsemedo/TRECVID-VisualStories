@@ -61,15 +61,23 @@ the provided groundtruth was generated for images only. Both SPAM filtered and n
 
 FULL:
 - Total images for edfest_2016: 29558
-- Total videos for edfest_2016: 5041
+- Total videos for edfest_2016: 4739
 - Total images for tourfrance_2016: 67032
-- Total videos for tourfrance_2016: 9478
+- Total videos for tourfrance_2016: 8353
+- Total images for edfest_2017: 34302
+- Total videos for edfest_2017: 4720
+- Total images for tourfrance_2017: 59530
+- Total videos for tourfrance_2017: 9555
 
 SPAM FILTERED:
-- Total images URL's for edfest_2016: 15439
-- Total videos URL's for edfest_2016: 3693
-- Total images URL's for tourfrance_2016: 34865
-- Total videos URL's for tourfrance_2016: 8685
+- Total images for edfest_2016: 15439
+- Total videos for edfest_2016: 3412
+- Total images for tourfrance_2016: 34865
+- Total videos for tourfrance_2016: 7708
+- Total images for edfest_2017: 16693
+- Total videos for edfest_2017: 4123
+- Total images for tourfrance_2017: 31373
+- Total videos for tourfrance_2017: 8740
 
 
 Description of individual columns:
