@@ -1,0 +1,76 @@
+###############################################################################################
+### TRECVID 2018 - Social-media Video Storytelling Linking                                    #
+### Task webpage: http://novasearch.org/trecvid-2018-social-media-video-storytelling-linking/ #
+### Github page: https://github.com/davidfsemedo/TRECVID-VisualStories			      #
+###############################################################################################
+
+TWITTER VISUAL STORIES DATASET
+
+For Convenience, we provide a set of pre-computed features.
+
+List of Provided Features for IMAGES:
+
+* CNN ResNET-50 features from a pre-trained network on ImageNET:
+	- Extracted from the penultimate layer, after Average Pooling
+	- Dimension 2048
+	- Non-normalized
+	- Available for both events, and both 2016 and 2017 editions. Files:
+		-- SPAM not Filtered:
+			--- edfest_2016_model-resnet50-avg_pool_dim-2048_non-normalized.hdf5
+			--- tourfrance_2016_model-resnet50-avg_pool_dim-2048_non-normalized.hdf5
+			--- edfest_2017_model-resnet50-avg_pool_dim-2048_non-normalized.hdf5
+			--- tourfrance_2017_model-resnet50-avg_pool_dim-2048_non-normalized.hdf5
+		-- SPAM Filtered:
+                        --- edfest_2016_nospam_model-resnet50-avg_pool_dim-2048_non-normalized.hdf5
+			--- tourfrance_2016_nospam_model-resnet50-avg_pool_dim-2048_non-normalized.hdf5
+			--- edfest_2017_nospam_model-resnet50-avg_pool_dim-2048_non-normalized.hdf5
+			--- tourfrance_2017_nospam_model-resnet50-avg_pool_dim-2048_non-normalized.hdf5
+
+
+Features are provided in HDF5 files (Please check https://support.hdfgroup.org/HDF5/examples/ for tutorials and terminology - Dataset, Group, etc.). Format:
+	- Attributes:
+		-- total_images: Total images (#I)
+		-- feat_description: A brief textual description of the feature
+	- Datasets:
+		-- descriptors: An array with shape #I x D, where #I denotes the number of images and D the feature dimensionality;
+		-- available_images: An array of size #I. Consists of a mask indicating which images were successfully downloaded and processed. For images which were not available (marked as 0), the corresponding entry of the "descriptors" array is filled with nan's;
+		-- image_tweet_id: An array of utf-8 formatted strings of size #I. Contains the tweet id of each image (e.g. image_tweet_id[0] is the tweet id of the image with descriptor descriptors[0]).
+
+
+#####################################################################################################
+
+List of Provided Features for VIDEOS:
+
+* CNN ResNET-50 features from a pre-trained network on ImageNET:
+	- Features are extracted from frames, sampled from every 2 seconds of a video
+	- Extracted from the penultimate layer, after Average Pooling
+	- Dimension 2048
+	- Non-normalized
+	- Available for both events, for 2017 editions only. Files:
+		-- SPAM not Filtered:
+			--- edfest_2017_videos_model-resnet50-avg_pool_dim-2048_non-normalized.hdf5
+			--- tourfrance_2017_videos_model-resnet50-avg_pool_dim-2048_non-normalized.hdf5
+		-- SPAM Filtered:
+			--- edfest_2017_nospam_videos_model-resnet50-avg_pool_dim-2048_non-normalized.hdf5
+			--- tourfrance_2017_nospam_videos_model-resnet50-avg_pool_dim-2048_non-normalized.hdf5
+
+Features are provided in HDF5 files (Please check https://support.hdfgroup.org/HDF5/examples/ for tutorials and terminology - Dataset, Group, etc.). Format:
+	- Attributes:
+		-- total_videos: Total videos (#V)
+		-- feat_description: A brief textual description of the feature
+	- Datasets:
+		-- available_videos: An array of size #V. Consists of a mask indicating which videos were successfully downloaded and processed. For videos which were not available (marked as 0), the corresponding entry of the "descriptors" array is filled with nan's;
+	- Groups -> One for each video. The key is the video index (e.g. f[0] is the group of video 0):
+		-- video_tweet_id: Contains the tweet id of this video (UTF-8 formatted string);
+		-- num_feature_frames: Number of frames #F for which features were extracted;
+		-- Datasets:
+			--- descriptors: An array with shape #F x D, where #F denotes the number of sampled frames and D the feature dimensionality;
+		
+
+
+
+
+If you have any question regarding the dataset or if you find any issue, please contact:
+David Semedo - Email: df.semedo@campus.fct.unl.pt
+
+The NOVASEARCH Team.
