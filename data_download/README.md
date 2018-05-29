@@ -4,6 +4,13 @@ TRECVID 2018 - Social-media Video Storytelling Linking Development Kit
 
 Bash scripts to download data.
 
+**NOTE**: All *.out files can be found in the folder "data_download/".
+
+## Tweets and users
+The dataset contains four files of the form *_twitter_tweets.out (Tweet ids), and four files of the form *_twitter_users.out" (User ids), one for each event. Each file consists of a list of ids, one per line.
+To obtain the tweets and user metadata, you have to use the Twitter API. To keep it straightforward, we suggest the use of a Twitter API Wrapper. The Python [TWARC](https://github.com/DocNow/twarc) command-line tool can be used for this purpose. Namely, check methods `hydrate` and `users` of TWARC. 
+
+
 ## Images
 
 The dataset contains four files of the form *_image-urls.out, one for each event, with and without spam content. 

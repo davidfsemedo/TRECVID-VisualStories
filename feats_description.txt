@@ -6,7 +6,7 @@
 
 TWITTER VISUAL STORIES DATASET
 
-For Convenience, we provide a set of pre-computed features.
+For Convenience, we provide a set of pre-computed features that you may optionally use.
 
 List of Provided Features for IMAGES:
 

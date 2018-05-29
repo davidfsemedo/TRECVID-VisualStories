@@ -1,8 +1,24 @@
 ###############################################################################################
 ### TRECVID 2018 - Social-media Video Storytelling Linking                                    #
 ### Task webpage: http://novasearch.org/trecvid-2018-social-media-video-storytelling-linking/ #
-### Github page: https://github.com/davidfsemedo/TRECVID-VisualStories			      #
+### Github page: https://github.com/davidfsemedo/TRECVID-VisualStories			      		  #
 ###############################################################################################
+
+
+######################### CHANGE LOG ##########################################################
+
+29-05-2018: Enforcement of Twitter data sharing Policy 
+
+* We are only allowed to share Tweet ids and User ids. Check our github repo for instructions on how to obtain the tweets
+  Twitter Developer Agreement and Policy: https://developer.twitter.com/en/developer-terms/agreement-and-policy
+
+  All CSV Files were updated. Please check below the description of each line of CSV files.
+
+* Added Auxiliary files to data_download/ folder obtain tweets and user information. Check our Github repository. 
+
+
+
+
 
 
 ######################### TWITTER VISUAL STORIES DATASET ######################################
@@ -56,6 +72,14 @@ the provided groundtruth was generated for images only. Both SPAM filtered and n
 
 
 
+Description of individual columns:
+- "id_str": The Tweet ID
+- "video-url": URL of the video, when the tweet contains a video
+- "image-url": URL of the image, when the tweet contains an image
+- "user_id": Id of the user
+
+
+
 ################################ Dataset Statistics ###########################################
 
 
@@ -78,24 +102,6 @@ SPAM FILTERED:
 - Total videos for edfest_2017: 4123
 - Total images for tourfrance_2017: 31373
 - Total videos for tourfrance_2017: 8740
-
-
-Description of individual columns:
-- "id": tweet id
-- "id_str": same as "id", but formatted as string
-- "created_at": Creation date of the tweet. Format: 2016-10-20 23:04:10
-- "epoch": Unix timestamp of the creation date of the tweet
-- "video-url": URL of the video, when the tweet contains a video
-- "image-url": URL of the image, when the tweet contains an image
-- "text": text of the tweet
-- "favorite_count": Number of times the tweet has been favorited
-- "retweet_count": Number of times the tweet has been retweeted
-- "user": Information of the user. Formatted as a json with the following entries:
-	- "id": Id of the user
-	- "id_str": Same as "id", but formatted as string
-	- "name": Name of the user
-	- "screen_name": Username of the user
-
 
 
 
