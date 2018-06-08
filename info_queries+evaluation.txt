@@ -1,0 +1,124 @@
+###############################################################################################
+### TRECVID 2018 - Social-media Video Storytelling Linking                                    #
+### Task webpage: http://novasearch.org/trecvid-2018-social-media-video-storytelling-linking/ #
+### Github page: https://github.com/davidfsemedo/TRECVID-VisualStories			      		  #
+###############################################################################################
+
+
+
+################################ Stories and Segments #########################################
+
+
+For each event, Story queries and corresponding segments can be found in JSON files:
+	- edfest_2016_stories.json
+	- tourfrance_2016_stories.json
+	- edfest_2017_stories.json
+	- tourfrance_2017_stories.json
+
+
+Each JSON has the event name ("event_name") and an array ("stories") with all the stories. Each story entry has:
+	- "story_title": The title of the story
+	- "story_id": The ID of the story
+	- "segments": An array of segments
+
+Each segment entry has:
+	- "segment_id": The ID of the segment
+	- "text": The segment's text
+	- "keywords": The segment's text keywords
+
+
+Example file:
+{
+	"event_name": "Edinburgh Festival 2016",
+	"stories": {
+		"story_title": "Edinburgh Castle is one of the main attractions",
+			"story_id": 1,
+			"segments": [
+				{
+					"segment_id": 1,
+					"text": "Deep time Show",
+					"keywords": "Deep time Show"
+				},
+				{
+					"segment_id": 2,
+					"text": "Fireworks",
+					"keywords": "Fireworks"
+				},
+				{
+					"segment_id": 3,
+					"text": "Beautiful streets of Edinburgh with its castle on the background",
+					"keywords": "Edinburgh streets and castle"
+				},
+				{
+					"segment_id": 4,
+					"text": "People enjoying Edinburgh Castle clear blue sky",
+					"keywords": "People and Edinburgh Castle with blue sky"
+				}
+			]
+		},
+		...
+}
+
+
+#################################### Run Submission File ######################################
+
+Submission files follow the standard TREC submission files format. Therefore, each file should have the following format:
+
+run_id query_id dummy doc_id
+0 1.1 dummy 760513155030220800
+0 1.2 dummy 768780028783972352
+0 1.3 dummy 784357358524915713
+0 1.4 dummy 767349865886130176
+...
+
+
+Where the first line is the header.
+Each of the remaining lines should contain the following fields, separated by a white space:
+	- run_id (defined by participants)
+	- query_id: Each query is a string of the form <story_id>.<segment_id> (the query_id 2.3 corresponds to the illustration of segment 3 of story 2)
+	- a dummy value
+	- doc_id: The Tweet ID of the image/video assigned to illustrate the segment
+
+
+Check our Git Repository (https://github.com/davidfsemedo/TRECVID-VisualStories/tree/master/evaluation) 
+to learn how to verify and evaluate your submission file using the evaluation script.
+
+Examples of submission files can be found at (https://github.com/davidfsemedo/TRECVID-VisualStories/tree/master/evaluation/runs).
+
+
+
+#################################### Groundtruth ##############################################
+
+Groundtruth is defined on two files:
+	- (1) Relevance of an image/video to a segment 
+	- (2) Transition between assigned images/videos of two consecutive segments 
+
+For each event you will find two .csv (a comma ',' is used as delimiter) files:
+	- <event_name>_relevance_groundtruth.csv (1)
+	- <event_name>_transitions_groundtruth.csv (2)
+
+	
+
+On both files, the first line is the header with column names.
+
+Each line of file (1) has the form: query_id,doc_id,rel
+	- query_id: ID of the query (<story_id>.<segment_id>);
+	- doc_id: The Tweet ID of the image/video;
+	- rel: Relevance of the image/video to the query (0 for non-relevant, 1 for relevant).
+
+
+Each line of file (2) has the form: query_id,doc_id1,doc_id2,trans
+	- query_id: ID of the query (<story_id>.<segment_id>);
+	- doc_id1: The Tweet ID of the first image/video;
+	- doc_id2: The Tweet ID of the second image/video;
+	- trans: Quality of the transition (0 for bad, 1 for good).
+NOTE: The transition is from doc_id1 to doc_id2 images/videos
+
+
+
+###############################################################################################
+
+If you have any question or if you find any issue, please contact:
+David Semedo - Email: df.semedo@campus.fct.unl.pt
+
+The NOVASEARCH Team.
