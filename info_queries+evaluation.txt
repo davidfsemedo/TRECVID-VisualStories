@@ -6,6 +6,8 @@
 
 
 
+
+
 ################################ Stories and Segments #########################################
 
 
@@ -60,6 +62,7 @@ Example file:
 }
 
 
+
 #################################### Run Submission File ######################################
 
 Submission files follow the standard TREC submission files format. Therefore, each file should have the following format:
@@ -97,7 +100,7 @@ For each event you will find two .csv (a comma ',' is used as delimiter) files:
 	- <event_name>_relevance_groundtruth.csv (1)
 	- <event_name>_transitions_groundtruth.csv (2)
 
-	
+
 
 On both files, the first line is the header with column names.
 
@@ -113,6 +116,26 @@ Each line of file (2) has the form: query_id,doc_id1,doc_id2,trans
 	- doc_id2: The Tweet ID of the second image/video;
 	- trans: Quality of the transition (0 for bad, 1 for good).
 NOTE: The transition is from doc_id1 to doc_id2 images/videos
+
+
+
+
+
+#################################### Evaluation ###############################################
+
+The evaluation computes a score that corresponds to the Quality metric described in the Guidelines document. 
+Concretely it assesses two criteria:
+
+- Relevance of each assigned image/video to a segment;
+- Quality of transitions between an assigned image/video of consecutive segments.
+
+For a detailed explanation of the metric, please refer to the Social-media Video Storytelling Linking Task Guidelines (guidelines.pdf) document available here.
+Each event is evaluated separately. 
+
+
+EVALUATION SCRIPT: An evaluation script is provided in our Git repository. 
+
+
 
 
 
