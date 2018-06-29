@@ -7,7 +7,7 @@ We provide a command line tool to evaluate runs. The evaluation computes a score
 * **Relevance** of each assigned image/video to a segment;
 * **Quality of transitions** between an assigned image/video of consecutive segments.
 
-For a detailed explanation of the metric, please refer to the Social-media Video Storytelling Linking Task Guidelines (`guidelines.pdf`) document available [here](http://datasets.novasearch.org/trecvid-visualstories/).
+For a detailed explanation of the metric, please refer to the Social-media Video Storytelling Linking Task Guidelines (`guidelines.pdf`) document available [here](https://www-nlpir.nist.gov/projects/tv2018/Tasks/lnk/trecvid_social_storytelling_guidelines.pdf).
 
 To run the script you will need both the Stories/segments queries and both relevance and transitions groundtruth files. These are all available in the [dataset directory](http://datasets.novasearch.org/trecvid-visualstories/).
 
