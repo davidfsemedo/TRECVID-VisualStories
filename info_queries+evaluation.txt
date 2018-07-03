@@ -1,7 +1,7 @@
 ###############################################################################################
 ### TRECVID 2018 - Social-media Video Storytelling Linking                                    #
 ### Task webpage: http://novasearch.org/trecvid-2018-social-media-video-storytelling-linking/ #
-### Github page: https://github.com/davidfsemedo/TRECVID-VisualStories			      		  #
+### Github page: https://github.com/davidfsemedo/TRECVID-VisualStories			      #
 ###############################################################################################
 
 
@@ -11,7 +11,7 @@
 ################################ Stories and Segments #########################################
 
 
-For each event, Story queries/topics and corresponding segments can be found in JSON files:
+For each event, Story topics and corresponding segments can be found in JSON files:
 	- edfest_2016_stories.json
 	- tourfrance_2016_stories.json
 	
@@ -83,7 +83,7 @@ Each of the remaining lines should contain the following fields, separated by a 
 	- a dummy value
 	- doc_id: The Tweet ID of the image/video assigned to illustrate the segment
 	
-NOTE: Each submission file must contain an entry/line for each topic/query ID.
+NOTE: Each submission file must contain an entry/line for each query ID.
 
 
 Check our Git Repository (https://github.com/davidfsemedo/TRECVID-VisualStories/tree/master/evaluation) 
