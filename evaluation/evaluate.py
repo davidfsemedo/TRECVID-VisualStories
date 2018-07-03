@@ -7,13 +7,14 @@ from termcolor import colored
 # Metric Parameters
 # These parameters should not be changed. Check Guidelines document for a description of each parameter.
 alpha = 0.1
-beta  = 0.6
+beta = 0.6
 
 event_names_abbreviations ={
 	"Edinburgh Festival 2016": "edfest_2016",
 	"Tour de France 2016": "tourfrance_2016",
 	"Edinburgh Festival 2017": "edfest_2017",
-	"Tour de France 2017": "tourfrance_2017"
+	"Tour de France 2017": "tourfrance_2017",
+    "Edinburgh Festival 2017 + Tour de France 2017" : "edfest+tourfrance_2017"
 }
 
 n_args = len(sys.argv)
