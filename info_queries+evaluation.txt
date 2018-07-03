@@ -11,14 +11,15 @@
 ################################ Stories and Segments #########################################
 
 
-For each event, Story queries and corresponding segments can be found in JSON files:
+For each event, Story queries/topics and corresponding segments can be found in JSON files:
 	- edfest_2016_stories.json
 	- tourfrance_2016_stories.json
-	- edfest_2017_stories.json
-	- tourfrance_2017_stories.json
+	
+For test topics, the topics/queries from both events are released in a single JSON file:
+	- edfest+tourfrance_2017_stories.json
 
 
-Each JSON has the event name ("event_name") and an array ("stories") with all the stories. Each story entry has:
+Each JSON has the event(s) name(s) ("event_name") and an array ("stories") with all the stories. Each story entry has:
 	- "story_title": The title of the story
 	- "story_id": The ID of the story
 	- "segments": An array of segments
@@ -81,6 +82,8 @@ Each of the remaining lines should contain the following fields, separated by a 
 	- query_id: Each query is a string of the form <story_id>.<segment_id> (the query_id 2.3 corresponds to the illustration of segment 3 of story 2)
 	- a dummy value
 	- doc_id: The Tweet ID of the image/video assigned to illustrate the segment
+	
+NOTE: Each submission file must contain an entry/line for each topic/query ID.
 
 
 Check our Git Repository (https://github.com/davidfsemedo/TRECVID-VisualStories/tree/master/evaluation) 
@@ -96,7 +99,7 @@ Groundtruth is defined on two files:
 	- (1) Relevance of an image/video to a segment 
 	- (2) Transition between assigned images/videos of two consecutive segments 
 
-For each event you will find two .csv (a comma ',' is used as delimiter) files:
+For each event(s) you will find two .csv (a comma ',' is used as delimiter) files:
 	- <event_name>_relevance_groundtruth.csv (1)
 	- <event_name>_transitions_groundtruth.csv (2)
 
