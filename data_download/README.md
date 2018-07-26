@@ -9,7 +9,7 @@ Bash scripts to download data.
 We provide a bash script (```download.sh```) to download videos, images and Tweets metadata. 
 
 #### Pre-requisites
-The script was tested on Linux (Ubuntu and CentOS). Windows should be able to run the script using Linux Bash Shell.
+The script was tested on Linux (Ubuntu and CentOS). Windows users should be able to run the script using Linux Bash Shell.
 
 First, make the script executable:
 ```console
@@ -17,7 +17,7 @@ foo@bar:~$ chmod +x download.sh
 ```
 Install the following tools:
 * youtube-dl - [Link](https://rg3.github.io/youtube-dl/download.html)
-* TWARC - [Link](https://rg3.github.io/youtube-dl/download.html)
+* TWARC - [Link](https://github.com/DocNow/twarc)
 
 We recommend the use of pip to install both tools:
 ```console
@@ -25,14 +25,14 @@ foo@bar:~$ pip install youtube_dl
 foo@bar:~$ pip install twarc 
 ```
 
-The version 1.4.6 of TWARC was used (pip install twarc==1.4.6). TWARC is a Twitter API Wrapper. Before using twarc you will need to register an application at [apps.twitter.com](https://apps.twitter.com/). Once you've created your application, generate an access token and access token secret. Setup TWARC with the generated token:
+The version 1.4.6 of TWARC was used (pip install twarc==1.4.6). TWARC is a Twitter API Wrapper. Before using TWARC you will need to register an application at [apps.twitter.com](https://apps.twitter.com/). Once you've created your application, generate an access token and access token secret. Setup TWARC with the generated token:
 ```console
 foo@bar:~$ twarc configure
 ```
 More detailed instructions on how to configure TWARC can be found in the TWARC [repository](https://github.com/DocNow/twarc).
 
 #### Downloading data
-The (```download.sh```) scripts automatically downloads videos, images and tweets metadata, for each event. Videos, images and metadata are stored each in a separate folder, per event. 
+The (```download.sh```) script automatically downloads videos, images and tweets metadata, for each event. Videos, images and metadata are stored each in a separate folder, per event. 
 You can check which options ara available with:
 ```console
 foo@bar:~$ ./download.sh --help
@@ -57,7 +57,7 @@ foo@bar:~$ ./download.sh --event tdf_2017 --data_prefix=<path_to_data_download_l
 ```
 The data_prefix option should receive the path of the folder with all the *.out files. The tool will create 3 different folders for each event: edfest_2017_videos, edfest_2017_images, edfest_2017_tweets_metadata, etc.
 
-**NOTE**: We advise you to run the download script, for each event, more than once to ensure that all content that is available is downloaded. Videos and Images already downloaded are skipped.
+**NOTE**: We advise you to run the download script for each event more than once, to ensure that all content that is available is downloaded. Videos and Images already downloaded are skipped.
 
 ##### Additional options
 You can opt to download only images, videos, tweets metadata or users metadata using the options --only_images, --only_videos, --only_tweets and only_users, respectively.
