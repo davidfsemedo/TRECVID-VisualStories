@@ -22,7 +22,7 @@ Install the following tools:
 We recommend the use of pip to install both tools:
 ```console
 foo@bar:~$ pip install youtube_dl
-foo@bar:~$ pip install twarc 
+foo@bar:~$ pip install twarc
 ```
 
 The version 1.4.6 of TWARC was used (pip install twarc==1.4.6). TWARC is a Twitter API Wrapper. Before using TWARC you will need to register an application at [apps.twitter.com](https://apps.twitter.com/). Once you've created your application, generate an access token and access token secret. Setup TWARC with the generated token:
@@ -37,9 +37,9 @@ You can check which options ara available with:
 ```console
 foo@bar:~$ ./download.sh --help
 Event data download tool.
-Usage: ./download.sh [-e|--event <arg>] [-s|--(no-)no_spam] [--(no-)only_images] [--(no-)only_videos] [--(no-)only_tweets] [--(no-)only_users] [-d|--data_prefix <arg>] [-h|--help]
+Usage: ./download.sh [-e|--event <arg>] [-s|--(no-)with_spam] [--(no-)only_images] [--(no-)only_videos] [--(no-)only_tweets] [--(no-)only_users] [-d|--data_prefix <arg>] [-h|--help]
 	-e,--event: Event name (e.g. edfest2016) (no default)
-	-s,--no_spam,--no-no_spam: boolean optional argument help msg (off by default)
+	-s,--with_spam,--no-with_spam: boolean optional argument help msg (off by default)
 	--only_images,--no-only_images: Download only images (off by default)
 	--only_videos,--no-only_videos: Download only videos (off by default)
 	--only_tweets,--no-only_tweets: Download only Tweets' metadata (off by default)
@@ -62,7 +62,7 @@ The data_prefix option should receive the path of the folder with all the *.out 
 ##### Additional options
 You can opt to download only images, videos, tweets metadata or users metadata using the options --only_images, --only_videos, --only_tweets and only_users, respectively.
 
-Additionally, you can download only non-spam content by passing the option --no_spam. Note that spam detection was done *automatically* and there may be some false negatives and false positives.
+Additionally, you can download ALL content (including content marked as SPAM) by passing the option --with_spam. Note that spam detection was done *automatically* and there may be some false negatives and false positives.
 
 #### Content format
 
@@ -72,7 +72,7 @@ Tweets and user metadata files, tweets.jsonl and users.jsonl, respectively, cons
 
 #### Issues
 
-A list of videos and images for which the download failed (file failed.out) will be created in the corresponding folders.
+A list of videos and images for which the download failed (file failed.out) will be created in the corresponding folders. Note that some images/videos may no longer be available.
 
 In case you encounter any errors you can check the logs for the problem. The tool will write logs to each type of content folder (videos, images and metadata folders). Feel free to contact us if you need any help/clarification.
 
